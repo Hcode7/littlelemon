@@ -1,0 +1,36 @@
+{% extends 'pages/base.html' %} 
+{% load static %} 
+{% block content %}
+<section>
+   <article>
+      <h1>Menu item</h1>
+      <span>
+         <a href="">Home</a> /
+         <a href="{% url 'menu' %}">Menu</a>/
+         {{ menu_item.name }}/
+      </span>
+      <!--Begin row-->
+      <div class="row">
+         <!--Begin col-->
+         <div class="column">
+            <h2>
+               {{ menu_item.name }}
+            </h2>
+            <p>
+               {{ menu_item.description }}
+            </p>
+            <p>
+               ${{ menu_item.price }}.00
+            </p>
+            
+
+         </div>
+         <!--End col-->
+         <!--Begin col-->
+         <article>
+            <img src="{{ menu_item.img.url }}" alt="{{ menu_item.name }}">  
+         </article>
+         <!--End row-->
+   </article>
+</section>
+{% endblock %}
